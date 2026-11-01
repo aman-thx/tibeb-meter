@@ -14,6 +14,7 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /api/ping", handlers.Ping)
 	mux.HandleFunc("GET /api/download", handlers.Download)
+	mux.HandleFunc("POST /api/upload", handlers.Upload)
 
 	srv := &http.Server{
 		Addr:    ":" + cfg.Port,
